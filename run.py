@@ -1,6 +1,8 @@
 # -*-coding:utf8-*-
-import performance
+import common.Performance
 import sys
+import json
+import re
 
 # 取数组的百分比值，如90%响应时间
 # 90%响应时间的获取规则，参考loadrunner官方文档
@@ -17,9 +19,6 @@ def get_percent_time(data_list, percent):
     data_list = data_list[:len(data_list)-r_length]
     return data_list[-1]
 
-# 设置并发数
-thread_count = sys.argv[2] 
-thread_count = int(thread_count) 
 # 所有线程花费时间列表
 spend_time_list = []
 # 最大响应时间
@@ -38,15 +37,28 @@ fail_total = 0
 except_total = 0
 # 总请求数
 total = 0
-# 请求地址
-url = sys.argv[1] 
-# 请求头
-header = {"Market-Version": "3.1"}
-i = 0
 # 所有线程总花费时间
 time_total = 0
+
+# 设置并发数
+thread_count = sys.argv[1]
+thread_count = int(thread_count)
+# 请求地址
+url = sys.argv[2]
+# 请求方法
+method = sys.argv[3]
+argv4=re.sub('\'','\"',sys.argv[4])
+argv4=json.loads(argv4)
+# 请求头
+header =  argv4
+# 请求体
+body = sys.argv[5]
+# 请求体类型
+body_type = sys.argv[6]
+
+i = 0
 while i < thread_count:
-    pf = performance.Performance(url=url, header=header)
+    pf = common.Performance.Performance(url=url,method=method,header=header,body=body,body_type=body_type)
     status, spend_time = pf.test_performance()
     spend_time_list.append(spend_time)
     total += 1

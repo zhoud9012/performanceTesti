@@ -8,9 +8,8 @@ Python 3.0+
 1. 安装Python 环境
 2. 启动测试脚本
     ```python
-   python run.py thread_count url method header body body_type
+    python run.py thread_count url method header body body_type
     ```
-eg:
     ```python
     python3.5 run.py 10 http://api-app.smartisan.com/app/index.php?r=api/v1_4/Recommend/List get "{'Market-Version': '3.1'}" "" "json"
     ```

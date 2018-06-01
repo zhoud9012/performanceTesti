@@ -22,13 +22,13 @@ Python 3.0+
     body_type:请求体类型:1.json 2.file 3.data
 
 ## 目录结构描述
-├── 2to3                        // Python 2转3 语法
-├── common                      // 测试公用类目录
-│  ├── __init__.py              
-│  ├── Performance.py           // 性能测试基类
-│  └── __pycache__              
-├── Readme.md                   // help
-└── run.py                      // 运行入口
+├── 2to3                        // Python 2转3 语法  
+├── common                      // 测试公用类目录  
+│  ├── __init__.py                
+│  ├── Performance.py           // 性能测试基类  
+│  └── __pycache__                
+├── Readme.md                   // help  
+└── run.py                      // 运行入口  
 
 ## V1.0.0 版本内容更新
 1. 语法修改   语法由Python 2转3

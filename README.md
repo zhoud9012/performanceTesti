@@ -14,12 +14,12 @@ Python 3.0+
     python3.5 run.py 10 http://api-app.smartisan.com/app/index.php?r=api/v1_4/Recommend/List get "{'Market-Version': '3.1'}" "" "json"
     ```
 3. 参数解释
-    thread_count:并发量
-    url:接口地址
-    method:请求方法
-    header:请求头
-    body:请求体
-    body_type:请求体类型:1.json 2.file 3.data
+    thread_count:并发量  
+    url:接口地址  
+    method:请求方法  
+    header:请求头  
+    body:请求体  
+    body_type:请求体类型:1.json 2.file 3.data  
 
 ## 目录结构描述
 ├── 2to3                        // Python 2转3 语法  
